@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+html,
+body {
+  @apply h-full w-full;
+}
+
+@layer base {
+  body {
+    @apply text-base font-thin leading-tight text-foreground;
+  }
+
+  h1 {
+    @apply text-[2rem] font-thin leading-tight;
+  }
+
+  h2 {
+    @apply text-2xl font-thin leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl font-normal leading-tight;
+  }
+
+  h4 {
+    @apply text-lg font-normal leading-tight;
+  }
+
+  .logo {
+    @apply block h-10 w-10 bg-auto bg-center	bg-no-repeat;
+    background-image: url('/assets/logo.svg');
+  }
+
+  .icon {
+    @apply block h-10 w-10 bg-auto bg-center	bg-no-repeat;
+  }
+
+  .icon-bookmark-empty {
+    background-image: url('/assets/icon-bookmark-empty.svg');
+  }
+
+  .icon-bookmark-full {
+    background-image: url('/assets/icon-bookmark-full.svg');
+  }
+
+  .icon-category-movie {
+    background-image: url('/assets/icon-category-movie.svg');
+  }
+
+  .icon-category-tv {
+    background-image: url('/assets/icon-category-tv.svg');
+  }
+
+  .icon-nav-bookmark {
+    background-image: url('/assets/icon-nav-bookmark.svg');
+  }
+
+  .icon-nav-home {
+    background-image: url('/assets/icon-nav-home.svg');
+  }
+
+  .icon-nav-movies {
+    background-image: url('/assets/icon-nav-movies.svg');
+  }
+
+  .icon-nav-tv-series {
+    background-image: url('/assets/icon-nav-tv-series.svg');
+  }
+
+  .icon-play {
+    background-image: url('/assets/icon-play.svg');
+  }
+
+  .icon-search {
+    background-image: url('/assets/icon-search.svg');
+  }
+}
