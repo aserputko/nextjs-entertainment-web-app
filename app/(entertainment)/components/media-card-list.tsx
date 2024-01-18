@@ -1,8 +1,12 @@
 import { MediaCard } from '@/app/(entertainment)/components/media-card';
+import { EntertainmentEntity } from '../entities/entertainment-entities';
 
-export function MediaCardList({ entertainments }: any) {
+type MediaCardListProps = { title: string; entertainments: EntertainmentEntity[] };
+
+export function MediaCardList({ entertainments, title }: MediaCardListProps) {
   return (
     <>
+      <h1 className='mb-9'>{title}</h1>
       {entertainments.map((item: any) => {
         return (
           <MediaCard
