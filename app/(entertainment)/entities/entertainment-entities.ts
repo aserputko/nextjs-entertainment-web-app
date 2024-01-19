@@ -13,7 +13,6 @@ const EntertainmentCategory = {
   UX: 'UX',
   Feature: 'Feature',
 } as const;
-
 export type EntertainmentCategory =
   (typeof EntertainmentCategory)[keyof typeof EntertainmentCategory];
 
@@ -22,5 +21,18 @@ const EntertainmentRating = {
   E: 'E',
   R18: '18+',
 } as const;
-
 export type EntertainmentRating = (typeof EntertainmentRating)[keyof typeof EntertainmentRating];
+
+export function bookmarkEntertainmentEntity(
+  entertainment: EntertainmentEntity,
+): EntertainmentEntity {
+  entertainment.isBookmarked = true;
+  return entertainment;
+}
+
+export function unbookmarkEntertainmentEntity(
+  entertainment: EntertainmentEntity,
+): EntertainmentEntity {
+  entertainment.isBookmarked = false;
+  return entertainment;
+}

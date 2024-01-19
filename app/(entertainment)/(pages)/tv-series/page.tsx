@@ -1,8 +1,14 @@
 import { getTVSeriesEntertainments } from '../../actions/entertainment-actions';
-import { MediaCardList } from '../../components/media-card-list';
+import { MediaCardsGrid } from '../../components/cards-grid';
+import { Search } from '../../components/search';
 
 export default async function TVSeriesPage() {
   const entertainments = await getTVSeriesEntertainments();
 
-  return <MediaCardList entertainments={entertainments} title='TV Series' />;
+  return (
+    <>
+      <Search placeholder='Search for TV series' />
+      <MediaCardsGrid entertainments={entertainments} title='TV Series' />
+    </>
+  );
 }

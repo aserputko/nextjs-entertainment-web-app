@@ -59,6 +59,7 @@ const config = {
         red: '#FC4747',
         white: '#FFFFFF',
         'dark-blue': '#10141E',
+        grey: '#979797',
         'greyish-blue': '#5A698F',
         'semi-dark-blue': '#161D2F',
       },

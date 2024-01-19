@@ -1,7 +1,12 @@
 'use server';
 
+import { NotFoundException } from '@/app/exceptions/not-found-exception';
 import { revalidateTag } from 'next/cache';
-import { EntertainmentEntity } from '../entities/entertainment-entities';
+import {
+  EntertainmentEntity,
+  bookmarkEntertainmentEntity,
+  unbookmarkEntertainmentEntity,
+} from '../entities/entertainment-entities';
 import {
   ENTERTAINMENT_API_TAG,
   findManyEntertainments,
@@ -45,13 +50,13 @@ export async function getBookmarkedEntertainments(
 
 /** Bookmark an Entertainment by ID */
 export async function bookmarkEntertainment(id: string) {
-  const entertainment = await findOneEntertainment(id);
+  let entertainment = await findOneEntertainment(id);
 
   if (!entertainment) {
-    throw new Error(`Entertainment with id ${id} not found`);
+    throw new NotFoundException(`Entertainment with id ${id} not found`);
   }
 
-  entertainment.isBookmarked = true;
+  entertainment = bookmarkEntertainmentEntity(entertainment);
 
   const updatedEntertainment = await updateEntertainment(id, entertainment);
 
@@ -62,13 +67,13 @@ export async function bookmarkEntertainment(id: string) {
 
 /** Unbookmark an Entertainment by ID */
 export async function unbookmarkEntertainment(id: string) {
-  const entertainment = await findOneEntertainment(id);
+  let entertainment = await findOneEntertainment(id);
 
   if (!entertainment) {
-    throw new Error(`Entertainment with id ${id} not found`);
+    throw new NotFoundException(`Entertainment with id ${id} not found`);
   }
 
-  entertainment.isBookmarked = false;
+  entertainment = unbookmarkEntertainmentEntity(entertainment);
 
   const updatedEntertainment = await updateEntertainment(id, entertainment);
 

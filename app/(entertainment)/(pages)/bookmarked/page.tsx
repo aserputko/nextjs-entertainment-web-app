@@ -1,8 +1,14 @@
 import { getBookmarkedEntertainments } from '../../actions/entertainment-actions';
-import { MediaCardList } from '../../components/media-card-list';
+import { MediaCardsGrid } from '../../components/cards-grid';
+import { Search } from '../../components/search';
 
 export default async function BookmarkedPage() {
   const entertainments = await getBookmarkedEntertainments();
 
-  return <MediaCardList entertainments={entertainments} title='Bookmarked' />;
+  return (
+    <>
+      <Search placeholder='Search for bookmarked shows' />
+      <MediaCardsGrid entertainments={entertainments} title='Bookmarked' />
+    </>
+  );
 }

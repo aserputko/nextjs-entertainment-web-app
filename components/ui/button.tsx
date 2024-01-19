@@ -12,8 +12,7 @@ const buttonVariants = cva(
         default:
           'bg-red text-white hover:bg-white hover:text-semi-dark-blue px-4 py-2 w-[336px] max-w-[336px] h-12',
         icon: 'bg-transparent text-greyish-blue hover:bg-transparent hover:text-red h-10 w-10',
-        bookmark:
-          'bg-[#979797]/50 text-white hover:bg-white hover:text-dark-blue h-8 w-8 rounded-full',
+        bookmark: 'bg-grey/50 text-white hover:bg-white hover:text-dark-blue h-8 w-8 rounded-full',
       },
     },
     defaultVariants: {

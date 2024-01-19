@@ -1,9 +1,11 @@
-import { Input } from '@/components/ui/input';
+import { Search } from '../../components/search';
 
-export default async function HomePage() {
+export default async function HomePage(props: any) {
+  console.log(props);
+
   return (
     <>
-      <Input type='search' placeholder='Search' className='mb-8' />
+      <Search placeholder='Search for movies or TV series' />
     </>
   );
 }
