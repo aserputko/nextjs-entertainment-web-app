@@ -10,22 +10,22 @@ export function Navbar() {
           <i className='logo'></i>
         </Link>
         <Link href='/home'>
-          <Button variant='icon'>
+          <Button variant='icon' tabIndex={0}>
             <i className='icon icon-nav-home'></i>
           </Button>
         </Link>
         <Link href='/movies'>
-          <Button variant='icon'>
+          <Button variant='icon' tabIndex={0}>
             <i className='icon icon-nav-movies'></i>
           </Button>
         </Link>
         <Link href='/tv-series'>
-          <Button variant='icon'>
+          <Button variant='icon' tabIndex={0}>
             <i className='icon icon-nav-tv-series'></i>
           </Button>
         </Link>
         <Link href='/bookmarked'>
-          <Button variant='icon'>
+          <Button variant='icon' tabIndex={0}>
             <i className='icon icon-nav-bookmark'></i>
           </Button>
         </Link>
