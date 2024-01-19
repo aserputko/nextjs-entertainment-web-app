@@ -2,8 +2,9 @@ import { getBookmarkedEntertainments } from '../../actions/entertainment-actions
 import { MediaCardsGrid } from '../../components/cards-grid';
 import { Search } from '../../components/search';
 
-export default async function BookmarkedPage() {
-  const entertainments = await getBookmarkedEntertainments();
+export default async function BookmarkedPage({ searchParams }: { searchParams?: { s?: string } }) {
+  const searchQuery = searchParams?.s || '';
+  const entertainments = await getBookmarkedEntertainments(searchQuery);
 
   return (
     <>
