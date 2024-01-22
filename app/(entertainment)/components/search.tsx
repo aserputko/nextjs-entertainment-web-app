@@ -25,7 +25,7 @@ export function Search({ placeholder }: SearchProps) {
     }
 
     replace(`${pathname}?${params.toString()}`);
-  }, 300);
+  }, 500);
 
   const defaultValue = searchParams.get(SEACRH_QUERY_KEY)?.toString();
 

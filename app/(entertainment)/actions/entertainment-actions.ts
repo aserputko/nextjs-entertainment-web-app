@@ -14,13 +14,13 @@ import {
   updateEntertainment,
 } from '../services/entertainment-api-service';
 
-/** View Trending Entertainments */
+/** Get Trending Entertainments */
 export async function getTrendingEntertainments(seqrchQuery = ''): Promise<EntertainmentEntity[]> {
   const queryParams = new URLSearchParams({ isTrending: 'true', title: seqrchQuery });
   return findManyEntertainments(queryParams);
 }
 
-/** View Trending Entertainments */
+/** Get Recommended Entertainments */
 export async function getRecommendedEntertainments(
   seqrchQuery = '',
 ): Promise<EntertainmentEntity[]> {
@@ -28,23 +28,52 @@ export async function getRecommendedEntertainments(
   return await findManyEntertainments(queryParams);
 }
 
-/** View Movies Entertainments */
-export async function getMovieEntertainments(seqrchQuery = ''): Promise<EntertainmentEntity[]> {
+/** Get All Entertainments by Seqrch Query */
+export async function getAllEntertainmentsBySeqrchQuery(
+  seqrchQuery = '',
+): Promise<EntertainmentEntity[]> {
+  const queryParams = new URLSearchParams({ title: seqrchQuery });
+  return await findManyEntertainments(queryParams);
+}
+
+/** Get Movies Entertainments */
+export async function getMoviesEntertainments(seqrchQuery = ''): Promise<EntertainmentEntity[]> {
   const queryParams = new URLSearchParams({ category: 'Movie', title: seqrchQuery });
   return await findManyEntertainments(queryParams);
 }
 
-/** View TV Series Entertainments */
+/** Get TV Series Entertainments */
 export async function getTVSeriesEntertainments(seqrchQuery = ''): Promise<EntertainmentEntity[]> {
   const queryParams = new URLSearchParams({ category: 'TV Series', title: seqrchQuery });
   return await findManyEntertainments(queryParams);
 }
 
-/** View Bookmarked Entertainments */
-export async function getBookmarkedEntertainments(
+/** Get Bookmarked Movies Entertainments */
+export async function getBookmarkedMoviesEntertainments(): Promise<EntertainmentEntity[]> {
+  const queryParams = new URLSearchParams({
+    isBookmarked: 'true',
+    category: 'Movie',
+  });
+  return await findManyEntertainments(queryParams);
+}
+
+/** Get Bookmarked TV Series Entertainments */
+export async function getBookmarkedTVSeriesEntertainments(): Promise<EntertainmentEntity[]> {
+  const queryParams = new URLSearchParams({
+    isBookmarked: 'true',
+    category: 'TV Series',
+  });
+  return await findManyEntertainments(queryParams);
+}
+
+/** Get Bookmarked Entertainments by Seqrch Query */
+export async function searchBookmarkedEntertainments(
   seqrchQuery = '',
 ): Promise<EntertainmentEntity[]> {
-  const queryParams = new URLSearchParams({ isBookmarked: 'true', title: seqrchQuery });
+  const queryParams = new URLSearchParams({
+    isBookmarked: 'true',
+    title: seqrchQuery,
+  });
   return await findManyEntertainments(queryParams);
 }
 
