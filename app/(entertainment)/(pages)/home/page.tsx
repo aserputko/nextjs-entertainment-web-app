@@ -5,6 +5,7 @@ import {
   getTrendingEntertainments,
 } from '../../actions/entertainment-actions';
 import { MediaCardsGrid } from '../../components/cards-grid';
+import { MediaCardsHorizontalList } from '../../components/cards-horizontal-list';
 import { Search } from '../../components/search';
 
 export default async function HomePage({ searchParams }: { searchParams?: { s?: string } }) {
@@ -32,7 +33,7 @@ export default async function HomePage({ searchParams }: { searchParams?: { s?: 
 
       {/* Trending */}
       {!!trendingEntertainments.length && (
-        <MediaCardsGrid entertainments={trendingEntertainments} title='Trending' />
+        <MediaCardsHorizontalList entertainments={trendingEntertainments} title='Trending' />
       )}
 
       {/* Recommended for you */}
